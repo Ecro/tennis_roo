@@ -20,5 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "tennis_roo"
-include(":app")
- 
+include(":watch_app")
+include(":core_sensors")
+include(":ml_gesture")
+include(":data_store")
