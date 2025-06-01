@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tennis Roo</string>
+    <string name="hello_world">Hello %1$s!</string>
+    <string name="score_format">%1$s - %2$s</string>
+    <string name="game_score_format">Game: %1$s - %2$s</string>
+    <string name="set_score_format">Set: %1$s - %2$s</string>
+    <string name="sensor_service_notification_title">Tennis Roo</string>
+    <string name="sensor_service_notification_text">Monitoring tennis activity</string>
+    <string name="undo_button">Undo</string>
+    <string name="start_match">Start Match</string>
+    <string name="end_match">End Match</string>
+    <string name="export_match">Export Match</string>
+    <string name="settings">Settings</string>
+    
+    <!-- New strings for enhanced UI -->
+    <string name="start_service">Start Service</string>
+    <string name="stop_service">Stop Service</string>
+    <string name="test_mode_on">Test Mode: ON</string>
+    <string name="test_mode_off">Test Mode: OFF</string>
+    <string name="simulate_strokes">Simulate Strokes</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="serve">Serve</string>
+    <string name="forehand">FH</string>
+    <string name="backhand">BH</string>
+    <string name="volley">Volley</string>
+    <string name="smash">Smash</string>
+    <string name="last_point">Last Point</string>
+    <string name="no_point_detected">No point detected yet</string>
+    <string name="record_point">Record Point</string>
+    <string name="debug_info">Debug Info</string>
+</resources>

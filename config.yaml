@@ -1,0 +1,93 @@
+# Tennis Roo Configuration
+
+# Enable Model Context Protocol (MCP) for enhanced tooling
+mcp:
+  enabled: true
+  servers:
+    - name: "tennis-sensor-server"
+      url: "http://localhost:8080"
+      description: "Local server for sensor data processing and analysis"
+      tools:
+        - name: "analyze_sensor_trace"
+          description: "Analyze a recorded sensor trace file for tennis strokes"
+        - name: "calibrate_thresholds"
+          description: "Calibrate detection thresholds based on user's playing style"
+        - name: "export_sensor_data"
+          description: "Export raw sensor data for external analysis"
+    - name: "tennis-ml-server"
+      url: "http://localhost:8081"
+      description: "Machine learning server for gesture classification"
+      tools:
+        - name: "train_model"
+          description: "Train a custom TFLite model on user data"
+        - name: "evaluate_model"
+          description: "Evaluate model performance on test data"
+        - name: "convert_model"
+          description: "Convert and optimize models for on-device inference"
+
+# Memory bank configuration for persistent context
+memoryBank:
+  enabled: true
+  categories:
+    - name: "user_preferences"
+      description: "User preferences for the application"
+      ttl: -1  # Never expire
+    - name: "sensor_calibration"
+      description: "Sensor calibration data"
+      ttl: 2592000  # 30 days in seconds
+    - name: "match_history"
+      description: "Recent match history summaries"
+      ttl: 7776000  # 90 days in seconds
+    - name: "stroke_patterns"
+      description: "User's stroke pattern characteristics"
+      ttl: 5184000  # 60 days in seconds
+
+# Sequential thinking configuration
+sequentialThinking:
+  enabled: true
+  steps:
+    - name: "sensor_processing"
+      description: "Process raw sensor data"
+      timeout: 100  # milliseconds
+    - name: "feature_extraction"
+      description: "Extract features from processed sensor data"
+      timeout: 150  # milliseconds
+    - name: "gesture_classification"
+      description: "Classify gestures based on extracted features"
+      timeout: 200  # milliseconds
+    - name: "score_update"
+      description: "Update score based on classified gestures"
+      timeout: 50   # milliseconds
+    - name: "ui_refresh"
+      description: "Refresh UI with updated score"
+      timeout: 16   # milliseconds (targeting 60fps)
+
+# Development environment configuration
+development:
+  logging:
+    level: "DEBUG"
+    sensors: true
+    classification: true
+    database: true
+    ui: false
+  testing:
+    mockSensors: true
+    replayTraces: true
+    tracesPath: "./test_traces"
+  performance:
+    batteryMonitoring: true
+    cpuProfiling: true
+    memoryProfiling: true
+
+# Production environment configuration
+production:
+  logging:
+    level: "ERROR"
+    sensors: false
+    classification: false
+    database: false
+    ui: false
+  optimization:
+    batterySaving: true
+    lowLatencyMode: true
+    backgroundProcessingLimit: "MEDIUM"
