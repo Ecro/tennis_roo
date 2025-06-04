@@ -8,7 +8,8 @@ This project is organized into multiple modules to ensure separation of concerns
 
 ### watch_app
 
-The main application module containing UI components and application lifecycle management.
+The sole application module containing UI components and application lifecycle management.
+Note that this project does not include a separate `app` module.
 
 **Responsibilities:**
 - User interface using Jetpack Compose for Wear OS
